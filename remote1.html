@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+<title>JavaScript test</title>
+</head>
+<body>
+<div id="div1" style="background-color: red;">Hello Javascript</div>
+<script> 
+window.addEventListener('load', onPageLoad);
+function onPageLoad(){
+console.info('page');
+var div1 = document.getElementById('div1');
+setTimeout(function(){
+div1.style.backgroundColor= 'green';}, 2000);
+
+div1.addEventListener('click', function(e){
+var p1= document.createElement('div');
+p1.innerHTML='Div adaugat dinamic';
+div1.appendChild(p1);
+});
+
+div1.addEventListener('click', function(e){
+div1.innerHTML='hELLO USER';
+});
+
+div1.addEventListener('mouseenter', function(e){
+div1.style.cursor = 'pointer';
+div1.style.backgroundColor='green';
+div1.style.opacity=0.5;
+
+});
+
+div1.addEventListener('mouseleave', function(e){
+div1.style.cursor = 'auto';
+div1.style.backgroundColor='red';
+div1.style.opacity=1;
+
+});
+};</script>
+</body>
+</html>
